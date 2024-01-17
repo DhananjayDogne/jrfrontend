@@ -16,7 +16,7 @@ const ResponseForm = () => {
                         <input type="password" id="password" name="password" readonly />
 
                             <label for="qrCode">QR Code:</label>
-                            <input type="text" id="qrCode" name="qrCode" readonly />
+                            <input type="file" id="qrCode" name="qrCode" readonly />
 
                                 <label for="response">Response:</label>
                                 <textarea id="response" name="response" required></textarea>
