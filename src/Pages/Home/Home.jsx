@@ -3,7 +3,9 @@ import "./Home.css";
 const Home = () => { 
     return (
         <div className="home">
-            Home
+            <div className="logo">
+                <img src="/logo.jpeg" alt="Example" />
+            </div> 
         </div>
     )
 }

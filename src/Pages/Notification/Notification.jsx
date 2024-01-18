@@ -7,11 +7,15 @@ import MapComponent from "./Map";
 const Notification = () => {
     const [data, setData] = useState([]);
     const [cord, setCord] = useState([0, 0]);
-    
+    const [showMap, setShowMap] = useState(false);
+
     const viewMap = (cord) => {
         console.log(cord);
         setCord(cord);
-        
+        setShowMap(true);
+    };
+    const viewDetails = () => { 
+
     }
     
     useEffect( () => {
@@ -37,38 +41,25 @@ const Notification = () => {
                 {data.map(item => (
                 <div>
             <div className="row">
-                <div>
-                    <h2>{item.name}</h2>
-                    <p>{item.email}</p>
-                    <p>{item.Contact}</p>      
-                    <p>{item.Address}</p>
-                    <p>{item.resolution}</p>     
-                    <p>{item.radius}</p>
-                    <p>{item.powerning}</p>          
+                <div >
+                    <h2>Name :{item.name}</h2>
+                    <p>Email :{item.email}</p>
+                    <p>Contact :{item.contact}</p>      
+                    <p>Address: {item.address}</p>
+                    <p>Rsolution :{item.resolution}</p>     
+                    <p>Radius :{item.radius}</p>
+                    <p>Powerning :{item.powerning}</p>          
                 </div>
                 <div className="buttons">
                     <div className="button detail" onClick={()=>viewDetails('1')}>View details</div>
                     <div className="button ignore">Ignore</div>
                     <div className="button video" onClick={() => viewDetails('1')}>Video</div>
-                    <div className="button live" onClick={() =>  viewMap(item.Location)}>Live</div>
+                    <div className="button live" onClick={() => viewMap(item.Location)}>Live</div>
                     <div className="button accept">Accept</div>
                 </div>
             </div>
 
-            <div className="row">
-                <div>
-                    <h2>User 2</h2>
-                    <p>Information of user 2.</p>
-                </div>
-                <div className="buttons">
-                    <div className="button detail" onclick={()=>viewDetails('2')}>View details</div>
-                    <div className="button ignore">Ignore</div>
-                    <div className="button video" onclick={() => viewVideo('2') }>Video</div>
-                    <div className="button live">Live</div>
-                    <div className="button accept">Accept</div>
-                </div>
-            </div>
-
+            
             <div id="detailsModal" className="modal">
                 <div className="modal-content">
                     <span className="close" onclick={()=>closeModal()}>&times;</span>
@@ -90,17 +81,14 @@ const Notification = () => {
                    
                 ))}
                 <div>
-                    <MapComponent latitude={cord[0]} longitude={cord[1]} />
+                    {<MapComponent latitude={cord[0]} longitude={cord[1]} />}
                 </div>
             </div>
         </>
     )
 }
 
-function viewDetails(key) {
-    // Fetch data from data_storage
-   
-}
+
 
 // Function to open the video modal and play the video
 function viewVideo(key) {

@@ -3,26 +3,25 @@ import React from 'react';
 const ResponseForm = () => {
     return (
         <div>
-            <h2>Record Response</h2>
+            <div class="logo"></div>
 
-            <form action="submit_response.php" method="post">
+            <h2>HIK App Details Submission</h2>
+
+            <form action="submit_details.php" method="post" enctype="multipart/form-data">
                 <label for="mobileNumber">Mobile Number:</label>
-                <input type="text" id="mobileNumber" name="mobileNumber" readonly />
+                <input type="tel" id="mobileNumber" name="mobileNumber" required />
 
                     <label for="userNumber">User Number:</label>
-                    <input type="text" id="userNumber" name="userNumber" readonly />
+                    <input type="text" id="userNumber" name="userNumber" required />
 
                         <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" readonly />
+                        <input type="password" id="password" name="password" required />
 
                             <label for="qrCode">QR Code:</label>
-                            <input type="file" id="qrCode" name="qrCode" readonly />
+                            <input type="file" id="qrCode" name="qrCode" accept="image/*" required />
 
-                                <label for="response">Response:</label>
-                                <textarea id="response" name="response" required></textarea>
-
-                                <input type="submit" value="Submit Response" />
-            </form>
+                                <input type="submit" value="Submit" />
+                                </form>
         </div>
     );
 };
