@@ -1,10 +1,10 @@
 .home{
     padding: 20px;
     height: 86vh;
-    background: linear-gradient(to bottom right, #e1e1ed14, #0044cc96);
+    background: linear-gradient(to bottom right, #e1e1ed14, #181818eb) ,linear-gradient(to top left, #e1e1ed14, #181818eb);
    
 }
-.logo{
-    width: fit-content;
-     margin: auto;
+
+.slids{
+    margin: 107px 294px;
 }
