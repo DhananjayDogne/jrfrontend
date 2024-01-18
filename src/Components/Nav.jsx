@@ -5,7 +5,7 @@ const Nav = () => {
     return (
      <nav>
         <ul>
-            <li><a href="/">Logo</a></li>
+                <li><a href="/"><img className="nav_logo" src="./logo.jpeg" /></a></li>
             <li><a href="#home">About</a></li>
             <li><a href="#home">Contact</a></li>
             <div class="nav_left">

@@ -66,7 +66,11 @@
      color: #fff;
      height: fit-content;
  }
-
+.button.accepted{
+    color: #2a7c30;
+    color: #fff;
+    height: fit-content;
+}
  .button.detail {
      background-color: black;
      color: #fff;

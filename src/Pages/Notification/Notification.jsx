@@ -8,16 +8,39 @@ const Notification = () => {
     const [data, setData] = useState([]);
     const [cord, setCord] = useState([0, 0]);
     const [showMap, setShowMap] = useState(false);
+    const [acceptedB, setAcceptedB] = useState([]);
+   
+    const viewDetails = () => { 
+
+    }
+   
+    const handleScrollDown = () => {
+        // Assuming contentRef is a reference to the last content element
+        const contentRef = document.getElementById('lastContent');
+
+        if (contentRef) {
+            contentRef.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
 
     const viewMap = (cord) => {
         console.log(cord);
         setCord(cord);
         setShowMap(true);
+        handleScrollDown();
     };
-    const viewDetails = () => { 
-
-    }
     
+    const Accept = (item) => { 
+        alert(item._id)
+        // axios.post('http://127.0.0.1:5000/accepted', item._id, {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        // });
+        // alert("Accepted");
+        console.log(item);
+    }
     useEffect( () => {
         // Fetch data when the component mounts
         axios.get('http://127.0.0.1:5000/get_cameraOwner')
@@ -55,7 +78,7 @@ const Notification = () => {
                     <div className="button ignore">Ignore</div>
                     <div className="button video" onClick={() => viewDetails('1')}>Video</div>
                     <div className="button live" onClick={() => viewMap(item.Location)}>Live</div>
-                    <div className="button accept">Accept</div>
+                    <div className={item.accpted ? "button accept": "button accepted"} onClick={(item)=>Accept(item)}>Accept</div>
                 </div>
             </div>
 
@@ -80,7 +103,7 @@ const Notification = () => {
                     </div>
                    
                 ))}
-                <div>
+                <div id="lastContent">
                     {<MapComponent latitude={cord[0]} longitude={cord[1]} />}
                 </div>
             </div>

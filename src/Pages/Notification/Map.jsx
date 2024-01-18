@@ -12,7 +12,7 @@ const MapComponent = ({ latitude, longitude }) => {
         shadowSize: [41, 41],
     });
     return (
-        <MapContainer center={position} zoom={3} style={{ height: '400px', width: '100%' }}>
+        <MapContainer center={position} zoom={3} style={{ height: '600px', width: '100%' }}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -4,7 +4,8 @@
     background: linear-gradient(to bottom right, #e1e1ed14, #0044cc96);
    
 }
-.logo{
-    width: fit-content;
-     margin: auto;
+.features{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10rem
 }

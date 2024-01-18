@@ -5,7 +5,9 @@ nav {
     padding: 1em;
 
 }
-
+.nav_logo{
+    width: 40px;
+}
 ul {
     list-style: none;
     margin: 0;

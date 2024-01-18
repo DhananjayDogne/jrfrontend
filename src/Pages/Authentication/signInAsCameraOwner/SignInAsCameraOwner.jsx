@@ -48,7 +48,9 @@ const SignInAsCameraOwner = () => {
                 Address: '',
                 resolution: '',
                 radius: '',
-                powerning: '',});
+                powerning: '',
+                accepted:false,
+            });
             
             // Handle success response from the server
         } catch (error) {
